@@ -6,7 +6,7 @@
 /*   By: nhariman <nhariman@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/26 19:27:03 by nhariman      #+#    #+#                 */
-/*   Updated: 2022/06/08 18:51:06 by nhariman      ########   odam.nl         */
+/*   Updated: 2022/06/09 19:51:05 by nhariman      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 	iterator tags: 
 		- https://www.cplusplus.com/reference/iterator/InputIterator/
 		- https://en.cppreference.com/w/cpp/iterator/iterator_tags
+		- https://docs.w3cub.com/cpp/iterator/iterator_traits
 */
 
 #include <cstddef>
