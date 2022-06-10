@@ -6,7 +6,7 @@
 /*   By: nhariman <nhariman@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/08 17:58:51 by nhariman      #+#    #+#                 */
-/*   Updated: 2022/06/08 18:00:09 by nhariman      ########   odam.nl         */
+/*   Updated: 2022/06/10 17:14:47 by nhariman      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,4 @@
 #include <traits/ft_make_pair.hpp>
 #include <traits/ft_pair.hpp>
 #include <traits/ft_reverse_iterator.hpp>
+#include <traits/ft_allocator.hpp>
