@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_reverse_iterator.hpp                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: nhariman <nhariman@student.codam.nl>         +#+                     */
+/*   By: nhariman <nhariman@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/08 15:26:11 by nhariman      #+#    #+#                 */
-/*   Updated: 2022/06/09 15:55:48 by nhariman      ########   odam.nl         */
+/*   Updated: 2022/06/14 20:58:17 by nhariman      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 	iterator tags: 
 		- https://cplusplus.com/reference/iterator/reverse_iterator/?kw=reverse_iterator
+		- https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp 
 */
 
 #include <cstddef>
@@ -22,21 +23,22 @@
 
 namespace ft
 {
+	// u gotta put this in the containers lol
 	template<class Iterator>
 		class reverse_iterator 
-	:	public	ft_iterator<class iterator_traits<Iterator>::iterator_category,
+	:	public	ft_iterator<class ft::iterator_traits<Iterator>::iterator_category,
 				class ft::iterator_traits<Iterator>::value_type,
 				class ft::iterator_traits<Iterator>::difference_type,
 				class ft::iterator_traits<Iterator>::pointer,
 				class ft::iterator_traits<Iterator>::reference>
 	{
 		public:
-			Iterator											iterator_type;
-			ft::iterator_traits<Iterator>::iterator_category	iterator_category;
-			ft::iterator_traits<Iterator>::value_type			value_type;
-			ft::iterator_traits<Iterator>::difference_type		difference_type;
-			ft::iterator_traits<Iterator>::pointer				pointer;
-			ft::iterator_traits<Iterator>::reference			reference;
+			typedef Iterator											iterator_type;
+			typedef ft::iterator_traits<Iterator>::iterator_category	iterator_category;
+			typedef ft::iterator_traits<Iterator>::value_type			value_type;
+			typedef ft::iterator_traits<Iterator>::difference_type		difference_type;
+			typedef ft::iterator_traits<Iterator>::pointer				pointer;
+			typedef ft::iterator_traits<Iterator>::reference			reference;
 			reverse_iterator() {};
 			iterator_type	base() const
 			{
@@ -44,15 +46,17 @@ namespace ft
 			};
 			reference		operator*() const
 			{
-				// content;
+				return (&value_type);
 			};
 			reverse_iterator	operator+ (difference_type n) const
 			{
-				//
+				this->difference_type += n;
+				return (*this);
 			};
 			reverse_iterator&	operator+= (difference_type n)
 			{
-				//
+				this->difference_type += n;
+				return (*this);
 			};
 			reverse_iterator&	operator++()
 			{
