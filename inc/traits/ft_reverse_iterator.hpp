@@ -6,7 +6,7 @@
 /*   By: nhariman <nhariman@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/08 15:26:11 by nhariman      #+#    #+#                 */
-/*   Updated: 2022/06/14 20:58:17 by nhariman      ########   odam.nl         */
+/*   Updated: 2022/06/15 17:16:40 by nhariman      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ namespace ft
 			};
 			reference		operator*() const
 			{
-				return (&value_type);
+				return (*pointer);
 			};
 			reverse_iterator	operator+ (difference_type n) const
 			{

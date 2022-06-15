@@ -6,7 +6,7 @@
 /*   By: nhariman <nhariman@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/10 14:18:07 by nhariman      #+#    #+#                 */
-/*   Updated: 2022/06/10 17:28:14 by nhariman      ########   odam.nl         */
+/*   Updated: 2022/06/15 16:41:05 by nhariman      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,17 @@ namespace ft
 			typedef allocator_type::pointer pointer;
 			typedef allocator_type::const_pointer const_pointer;
 			// iterators here????
-			
+			struct Iterator
+			{
+				struct	input_iterator_tag {};
+				struct	output_iterator_tag {};
+				struct	forward_iterator_tag : public input_iterator_tag {};
+				struct	bidirectional_iterator_tag : public forward_iterator_tag {};
+				struct	random_access_iterator_tag : public	bidirectional_iterator_tag {};
+				Iterator(pointer ptr) : m_ptr(ptr) {};
+				private:
+					pointer m_ptr;
+			};
 			
 		};
 }
